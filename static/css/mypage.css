@@ -1,0 +1,152 @@
+header{
+	padding: 15px;
+	/*background: rgba(100,100,100,0.5);*/
+	border-bottom: medium solid #52c2d0;
+}
+h1{
+	text-align: left;
+	color: #000;
+	
+}
+body{
+	/*background-image: url("../image/shibo-washi-pattern-03.jpg");*/
+}
+.store{
+	text-align: center;
+}
+
+.row{
+	min-height: 100vh;
+	position: relative;
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 0 !important;
+	padding-left: 0;
+}
+.col-12{
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 0 !important;
+	padding-left: 0;
+	max-height: 100px;
+}
+
+.item{
+	background-color: #77EEFF;
+	color: #fff;
+}
+p{
+	margin-bottom: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+td{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+a{
+	font-size : 20px ; 
+}
+.col{
+	margin-top: 50px;
+}
+.table1{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table1 .tr1{
+  border-bottom: solid 2px white;
+}
+
+.table1 .tr1:last-child{
+  border-bottom: none;
+}
+
+.table1 .th1{
+  position: relative;
+  text-align: left;
+  
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.table1 .th1:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.table1 .td1{
+  text-align: left;
+ 
+  text-align: center;
+  background-color: #eee;
+  padding: 10px 0;
+}
+
+
+.table2{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table2 .tr2{
+  border-bottom: solid 2px white;
+}
+
+.table2 .tr2:last-child{
+  border-bottom: none;
+}
+
+.table2 .th2{
+  position: relative;
+  text-align: left;
+  
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.table2 .td2{
+  text-align: left;
+ 
+  text-align: center;
+  background-color: #eee;
+  padding: 10px 0;
+}
+.button-container{
+	text-align: center;
+	margin-top: 30px;
+}
+button {
+ 
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #52c2d0;/*ボタン色*/
+  color: #FFF;
+  border-radius: 3px;
+}
+button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+.stock-btn {
+  margin-top: 20px;
+}

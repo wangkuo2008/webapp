@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>マイページ</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/css/stock.css">
+</head>
+<body>
+<form name="read" action="/stock" method="POST">
+	
+		
+	<header>
+		<img src="../static/image/logo.png">
+	</header>
+		
+	<div class="row">
+		<div class="col-12 col">
+			<h2>・在庫入力</h2>
+			<table border="1" class="table1">
+					<tr>
+						<th width="30%" class="th1">
+							商品名
+					 	</th>
+						<td width="70%" class="td1">
+							<input type="text" name="">
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							個数
+						</th>
+						<td width="70%" class="td1">
+							<input type="number" name="">
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							値段
+						</th>
+						<td width="70%" class="td1">
+							<input type="number" name="">
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							廃棄時間
+						</th>
+						<td width="70%" class="td1">
+							<input type="number" name="" class="date">月<input type="number" name="" class="date">日  <input type="number" name="" class="date">:<input type="number" name="" class="date">
+						</td>
+					</tr>
+				</table>
+				<div class="btn-container">
+					<button type="submit">保存</button>
+				</div>
+		</div>
+		
+	</div>
+	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</form>
+</body>
+</html>

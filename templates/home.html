@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>周辺の店舗</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/css/home.css">
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCb1xG0nXwWY0yTxG_nhj7CACwBIEwI7yc&sensor=TURE"></script>
+</head>
+<body>
+<form name="read" action="/login" method="POST" class="main">
+	<div class="row main">
+		<div class="col-12">
+			
+
+			<header>
+				<img class="logo" src="../static/image/logo.png">
+				<div class="store-button-container">
+					<button class="tologin" type="submit">お店の方はこちら</button>
+				</div>
+			</header>
+			<div class="col-6">
+			</div>
+			<div class="col-6">
+				<h1>あなたに安い揚げ物を提供します</h1>
+			</div>
+
+		</div>
+	</div>
+</form>
+
+<form name="store" action="/store" method="POST" class="store">
+	<div class="row">
+			<div class="col-sm-8 image">
+				<div class="store">
+					<!-- <img class="im" src="../static/image/google_map.png"> -->
+					<p id="demo">Click to get your location：</p>
+				    <button onclick="getLocation()" type="button" class="getgps">ボタンを押して位置情報を取得!!</button>
+				    <div id="mapholder" class="im"></div>
+				    <div class="map" id="googleMap"></div>
+				</div>
+			</div>
+			
+			<div class="col-sm-4 columns">
+				<div class="select-box">
+					<select>
+						<option>絞り込み</option>
+						<option>近い順</option>
+						<option>割引率順</option>
+					</select>
+				</div>
+				<table border="1" class="columns-table">
+						<tr class="columns-tr">
+							<td width="100%" class="columns-td">
+								<a href="javascript:store.submit()">SEIYU ○○店</a><input type="hidden" name="v" value="SEIYU ○○店">
+							</td>
+						</tr>
+						<tr class="columns-tr">
+							<td width="100%" class="columns-td">
+								<a href="">マルエツ ○○店</a>
+							</td>
+						</tr>
+						<tr class="columns-tr">
+							<td width="100%" class="columns-td">
+								<a href="">イトーヨーカドー ○○店</a>
+							</td>
+						</tr>
+						<tr class="columns-tr">
+							<td width="100%" class="columns-td">
+								<a href="">イオン ○○店</a>
+							</td>
+						</tr>
+						<tr class="columns-tr">
+							<td width="100%" class="columns-td">
+								<a href="">セブンイレブン ○○店</a>
+							</td>
+						</tr>
+						
+				</table>
+			</div>
+	</div>
+</form>
+<form name="commodity" action="/commodity" method="POST" class="commodity">
+	<div class="row">
+		<div class="col-sm-6">
+			<table border="1" class="table1">
+					<tr>
+						<th width="30%" class="th1">
+							商品名
+					 	</th>
+						<td width="70%" class="td1">
+							<a href="javascript:commodity.submit()">コロッケ</a>
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							店舗名
+					 	</th>
+						<td width="70%" class="td1">
+							SEIYU ○○店
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							住所
+						</th>
+						<td width="70%" class="td1">
+							東京都新宿区西新宿1-1-1
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							営業時間
+						</th>
+						<td width="70%" class="td1">
+							9:00〜21:00
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							取扱カテゴリ
+						</th>
+						<td width="70%" class="td1">
+							肉、魚、野菜、乳製品、弁当、惣菜
+						</td>
+					</tr>
+			</table>
+		</div>
+		<div class="col-sm-6">
+			
+			
+		</div>
+	</div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    var head= "/home/badola/桌面/东京工业大学/研究/代码/user.png";
+    var x=document.getElementById("demo");
+    var gps=new google.maps.LatLng(35.626,139.778);
+    var dianpu1=new google.maps.LatLng(35.6280432,139.7767402);
+    var dianpu2=new google.maps.LatLng(35.62578,139.7769944);
+    var dianpu3=new google.maps.LatLng(35.6268079,139.7758197);
+    function initialize()
+    {
+    var mapProp = {
+      center:gps,
+      zoom:14,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+    
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    
+    var marker1=new google.maps.Marker({
+      position:dianpu1,
+      });
+    
+    marker1.setMap(map);
+    
+    var infowindow1 = new google.maps.InfoWindow({
+      content:"maruetu"
+      });
+    
+    google.maps.event.addListener(marker1, 'click', function() {
+      infowindow1.open(map,marker1);
+      map.setZoom(18);
+      map.setCenter(marker2.getPosition());
+      });
+    
+    var marker2=new google.maps.Marker({
+      position:dianpu2,
+      });
+    
+    marker2.setMap(map);
+    
+    var infowindow2 = new google.maps.InfoWindow({
+      content:"OK"
+      });
+    
+    google.maps.event.addListener(marker2, 'click', function() {
+      infowindow2.open(map,marker2);
+      map.setZoom(18);
+      map.setCenter(marker2.getPosition());
+      });
+    
+    
+    
+    
+      var marker3=new google.maps.Marker({
+      position:dianpu3,
+      });
+    
+    marker3.setMap(map);
+    
+    var infowindow3 = new google.maps.InfoWindow({
+      content:"LEVI'S"
+      });
+    
+    google.maps.event.addListener(marker3, 'click', function() {
+      infowindow3.open(map,marker3);
+      map.setZoom(18);
+      map.setCenter(marker3.getPosition());
+      });
+    }
+    function getLocation()
+{
+	if (navigator.geolocation)
+	{
+		navigator.geolocation.getCurrentPosition(showPosition,showError);
+	}
+	else
+	{
+		x.innerHTML="该浏览器不支持获取地理位置。";
+	}
+}
+function showPosition(position)
+{
+	lat=position.coords.latitude;
+	lon=position.coords.longitude;
+	latlon=new google.maps.LatLng(lat, lon)
+	mapholder=document.getElementById('googleMap')
+	mapholder.style.height='600px';
+	mapholder.style.width='100%';
+
+	var myOptions={
+		center:latlon,zoom:14,
+		mapTypeId:google.maps.MapTypeId.ROADMAP,
+		mapTypeControl:false,
+		navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+	};
+   var map = new google.maps.Map(document.getElementById("googleMap"),myOptions);
+	 var marker=new google.maps.Marker({position:latlon,map:map,icon:head,title:"You are here!"});
+//
+   var marker1=new google.maps.Marker({
+  position:dianpu1,
+  });
+
+marker1.setMap(map);
+
+var infowindow1 = new google.maps.InfoWindow({
+  content:"maruetu"
+  });
+
+google.maps.event.addListener(marker1, 'click', function() {
+  infowindow1.open(map,marker1);
+  map.setZoom(18);
+  map.setCenter(marker2.getPosition());
+  });
+  var marker2=new google.maps.Marker({
+  position:dianpu2,
+  });
+
+marker2.setMap(map);
+
+var infowindow2 = new google.maps.InfoWindow({
+  content:"OK"
+  });
+
+google.maps.event.addListener(marker2, 'click', function() {
+  infowindow2.open(map,marker2);
+  map.setZoom(18);
+  map.setCenter(marker2.getPosition());
+  });
+
+
+
+
+  var marker3=new google.maps.Marker({
+  position:dianpu3,
+  });
+
+marker3.setMap(map);
+
+var infowindow3 = new google.maps.InfoWindow({
+  content:"LEVI'S"
+  });
+
+google.maps.event.addListener(marker3, 'click', function() {
+  infowindow3.open(map,marker3);
+  map.setZoom(18);
+  map.setCenter(marker3.getPosition());
+  });
+
+//
+}
+function showError(error)
+{
+	switch(error.code) 
+	{
+		case error.PERMISSION_DENIED:
+			x.innerHTML="PERMISSION DENIED"
+			break;
+		case error.POSITION_UNAVAILABLE:
+			x.innerHTML="UNAVAILABLE POSITION"
+			break;
+		case error.TIMEOUT:
+			x.innerHTML="CORRESPONDING TIMEOUT!"
+			break;
+		case error.UNKNOWN_ERROR:
+			x.innerHTML="UNKNOWN ERRPR!"
+			break;
+	}
+}
+    
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</body>
+</html>

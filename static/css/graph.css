@@ -1,0 +1,70 @@
+header{
+	padding: 15px;
+	/*background: rgba(100,100,100,0.5);*/
+	border-bottom: medium solid #52c2d0;
+}
+h1{
+	text-align: left;
+	color: #000;
+	
+}
+body{
+	/*background-image: url("../image/shibo-washi-pattern-03.jpg");*/
+}
+.store{
+	text-align: center;
+}
+
+.row{
+	min-height: 100vh;
+	position: relative;
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 0 !important;
+	padding-left: 0;
+}
+.col-12{
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 0 !important;
+	padding-left: 0;
+	max-height: 100px;
+}
+
+table{
+	width: 80%;
+	border-color: rgb(68,114,196);
+}
+th{
+	background-color: #77EEFF;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+
+}
+.item{
+	background-color: #77EEFF;
+	color: #fff;
+}
+p{
+	margin-bottom: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+td{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+a{
+	font-size : 20px ; 
+}
+.col{
+	margin-top: 50px;
+}
+
+select{
+	margin-top: 50px;
+	margin-left: 50px;
+}

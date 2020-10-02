@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>マイページ</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/css/mypage.css">
+</head>
+<body>
+<form name="read" action="/a" method="POST">
+	
+		
+	<header>
+		<img src="../static/image/logo.png">
+	</header>
+		
+	<div class="row">
+		<div class="col-sm-6 col">
+			<h2>・店舗情報</h2>
+			<table border="1" class="table1">
+					<tr>
+						<th width="30%" class="th1">
+							店舗名
+					 	</th>
+						<td width="70%" class="td1">
+							SEIYU ○○店
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							住所
+						</th>
+						<td width="70%" class="td1">
+							東京都新宿区西新宿1-1-1
+						</td>
+					</tr>
+					<tr>
+						<th width="30%" class="th1">
+							営業時間
+						</th>
+						<td width="70%" class="td1">
+							9:00〜21:00
+						</td>
+					</tr>
+				</table>
+		</div>
+		
+		<div class="col-sm-4 col">
+			<h2>・売れ残る可能性が高い商品</h2>
+			<table border="1" class="table2">
+					<tr>
+						<th width="10%" class="th2"></th>
+						<th width="70%" class="th2">
+							商品名
+					 	</th>
+						<th width="20%" class="th2">
+							価格
+						</th>
+					</tr>
+					<tr>
+						<td width="10%" class="td2"><input type="checkbox"></td>
+						<td width="70%" class="td2">
+							コロッケ
+						</td>
+						<td width="20%" class="td2">50円</td>
+					</tr>
+					<tr>
+						<td width="10%" class="td2"><input type="checkbox"></td>
+						<td width="70%" class="td2">
+							唐揚げ棒
+						</td>
+						<td width="20%" class="td2">100円</td>
+					</tr>
+					
+			</table>
+			<div class="button-container">
+				<button type="submit" formaction="/discount_commodity">送信</button>
+			</div>
+		</div>
+		<div class="col-sm-2 col">
+			<button type="submit" formaction="/graph">売上予測を確認</button>
+			<button class="stock-btn" type="submit" formaction="/stock">在庫を入力</button>
+		</div>
+	</div>
+	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</form>
+</body>
+</html>
